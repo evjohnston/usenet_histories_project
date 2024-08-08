@@ -24,7 +24,7 @@
 <body>
     <div id="menu-container"></div>
     <div class="container">
-        <h1>Table of Contents</h1>
+        <h1>Welcome to Page 2</h1>
         <p>This is some sample text for the second page.</p>
         <div class="button-group">
             <a href="index.html"><button>Back</button></a>
@@ -36,8 +36,19 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('menu-container').innerHTML = data;
-                var scripts = document.querySelectorAll('#menu-container script');
-                scripts.forEach(script => eval(script.innerText));
+                // Reattach the script to ensure it runs
+                var script = document.createElement('script');
+                script.textContent = `
+                    function toggleMenu() {
+                        var menu = document.getElementById('menuItems');
+                        if (menu.style.display === 'block') {
+                            menu.style.display = 'none';
+                        } else {
+                            menu.style.display = 'block';
+                        }
+                    }
+                `;
+                document.body.appendChild(script);
             });
     </script>
 </body>
