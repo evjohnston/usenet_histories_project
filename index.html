@@ -6,7 +6,7 @@
     <title>Page 1</title>
     <style>
         body { 
-            font-family: Times New Roman, serif; 
+            font-family: 'Times New Roman', serif; 
             text-align: center; 
             margin: 0;
             padding: 0;
@@ -31,54 +31,10 @@
         .next-button {
             margin-top: 20px;
         }
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1000;
-        }
-        .hamburger-menu div {
-            width: 30px;
-            height: 3px;
-            background-color: black;
-            margin: 4px 0;
-        }
-        .menu-items {
-            display: none;
-            position: fixed;
-            top: 50px;
-            left: 20px;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-        .menu-items a {
-            display: block;
-            padding: 8px;
-            text-decoration: none;
-            color: black;
-        }
-        .menu-items a:hover {
-            background-color: #63694F;
-        }
     </style>
 </head>
 <body>
-    <div class="hamburger-menu" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="menu-items" id="menuItems">
-        <a href="index.html">Page 1</a>
-        <a href="page2.html">Page 2</a>
-        <a href="page3.html">Page 3</a>
-    </div>
+    <div id="menu-container"></div>
     <div class="header-container">
         <img src="images/headerimage.png" alt="Header Image" class="header-image">
     </div>
@@ -91,14 +47,13 @@
         </div>
     </div>
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menuItems');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+                var scripts = document.querySelectorAll('#menu-container script');
+                scripts.forEach(script => eval(script.innerText));
+            });
     </script>
 </body>
 </html>
