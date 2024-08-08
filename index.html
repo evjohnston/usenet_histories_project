@@ -21,5 +21,12 @@
             <a href="page2.html"><button>Next</button></a>
         </div>
     </div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
