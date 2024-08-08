@@ -5,7 +5,7 @@
         .hamburger-menu {
             position: fixed;
             top: 20px;
-            left: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
             cursor: pointer;
@@ -21,7 +21,7 @@
             display: none;
             position: fixed;
             top: 50px;
-            left: 20px;
+            right: 20px;
             background-color: white;
             border: 1px solid #ccc;
             padding: 10px;
@@ -35,7 +35,7 @@
             color: black;
         }
         .menu-items a:hover {
-            background-color: #63694F;
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -46,19 +46,19 @@
         <div></div>
     </div>
     <div class="menu-items" id="menuItems">
-        <a href="index.html">Home</a>
-        <a href="page2.html">Table of Contents</a>
-        <a href="page3.html">1981 - Usenet is Born</a>
+        <a href="index.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
     </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menuItems');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('menuItems');
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'block';
+        }
+    }
+</script>
