@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .hamburger-menu {
             position: fixed;
@@ -37,7 +35,7 @@
             color: black;
         }
         .menu-items a:hover {
-            background-color: #ddd;
+            background-color: #63694F;
         }
     </style>
 </head>
@@ -48,12 +46,12 @@
         <div></div>
     </div>
     <div class="menu-items" id="menuItems">
-        <a href="index.html">Page 1</a>
-        <a href="page2.html">Page 2</a>
-        <a href="page3.html">Page 3</a>
+        <a href="index.html">Home</a>
+        <a href="page2.html">Table of Contents</a>
+        <a href="page3.html">1981 - Usenet is Born</a>
     </div>
     <script>
-        window.toggleMenu = function() {
+        function toggleMenu() {
             var menu = document.getElementById('menuItems');
             if (menu.style.display === 'block') {
                 menu.style.display = 'none';
