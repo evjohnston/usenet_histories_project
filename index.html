@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 1</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .next-button { margin-top: 20px; }
-        .header-image { width: 100%; height: auto; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0;
+            padding: 0;
+        }
+        .header-container {
+            background-color: #9EA587;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .header-image {
+            width: 100%;
+            max-width: 1200px; /* Adjust this value if needed */
+            height: auto;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .next-button {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+    <div id="menu-container"></div>
+    <div class="header-container">
+        <img src="images/page1headersimple.jpeg" alt="Header Image" class="header-image">
+    </div>
     <div class="container">
-        <img src="images/page1header.jpeg" alt="Header Image" class="header-image">
         <h1>Welcome to Page 1</h1>
         <p>This is some sample text for the first page.</p>
-        <img src="https://via.placeholder.com/400" alt="Placeholder Image">
         <div class="next-button">
             <a href="page2.html"><button>Next</button></a>
         </div>
